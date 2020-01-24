@@ -10,7 +10,7 @@ pipeline{
     sh '''
     if [ `ps -ef | grep hcuufile-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}'` ];then
       
-		ps -ef | grep runserver | grep venv  | grep python3 | grep -v grep | awk '{print $2}' | xargs kill -9 
+		ps -ef | grep  hcuufile-0.0.1-SNAPSHOT.jar | grep venv  | grep -v grep | awk '{print $2}' | xargs kill -9 
     fi
 '''
 
