@@ -9,7 +9,7 @@ pipeline{
 
     sh '''
     if [ `ps -ef | grep /var/lib/jenkins/workspace/HCUUFILE_JENKINS_2/target/hcuufile-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}'` ];then
-        . .venv/bin/activate
+      
 		ps -ef | grep runserver | grep venv  | grep python3 | grep -v grep | awk '{print $2}' | xargs kill -9 
     fi
 '''
