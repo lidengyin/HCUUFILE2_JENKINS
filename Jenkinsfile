@@ -13,7 +13,7 @@ pipeline{
 		ps -ef | grep runserver | grep venv  | grep python3 | grep -v grep | awk '{print $2}' | xargs kill -9 
     fi
 '''
-}
+
                 sh 'mvn clean package spring-boot:repackage' 
                  withEnv(['JENKINS_NODE_COOKIE=dontkillme']) {
                         sh """
