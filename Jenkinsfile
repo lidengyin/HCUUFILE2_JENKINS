@@ -4,6 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'export BUILD_ID=dontKillMe'
+                sh 'ps -ef | grep hcuufile-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}' | xargs kill -9'
                 sh 'source /etc/profile'
                 sh 'mvn clean package spring-boot:repackage'
            
